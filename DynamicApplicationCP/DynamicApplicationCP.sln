@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicApplicationCP", "DynamicApplicationCP\DynamicApplicationCP.csproj", "{2751FB9E-AE66-4A09-9BA7-00B8C4B8739F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamicApplicationCP", "DynamicApplicationCP\DynamicApplicationCP.csproj", "{2751FB9E-AE66-4A09-9BA7-00B8C4B8739F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicApplicationCP.Test", "DynamicApplicationCP.Test\DynamicApplicationCP.Test.csproj", "{B6C9DDEB-BA9B-4F9A-BF82-CF19A5AB64E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{2751FB9E-AE66-4A09-9BA7-00B8C4B8739F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2751FB9E-AE66-4A09-9BA7-00B8C4B8739F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2751FB9E-AE66-4A09-9BA7-00B8C4B8739F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6C9DDEB-BA9B-4F9A-BF82-CF19A5AB64E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6C9DDEB-BA9B-4F9A-BF82-CF19A5AB64E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6C9DDEB-BA9B-4F9A-BF82-CF19A5AB64E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6C9DDEB-BA9B-4F9A-BF82-CF19A5AB64E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

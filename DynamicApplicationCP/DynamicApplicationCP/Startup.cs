@@ -20,7 +20,7 @@ public class Startup
         services.AddSwaggerGen();
 
         // Register custom services
-        services.AddSingleton<CosmosDBService>();
+        services.AddSingleton<ICosmosDBService, CosmosDBService>();
         services.AddScoped<IQuestionService, QuestionService>();
         services.AddScoped<IProgramService, ProgramService>();
         services.AddScoped<ICandidateService, CandidateService>();

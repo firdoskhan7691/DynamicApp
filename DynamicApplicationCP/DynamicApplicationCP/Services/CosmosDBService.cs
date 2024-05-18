@@ -1,8 +1,9 @@
-﻿using Microsoft.Azure.Cosmos;
+﻿using DynamicApplicationCP.Interfaces;
+using Microsoft.Azure.Cosmos;
 
 namespace DynamicApplicationCP.Services
 {
-    public class CosmosDBService
+    public class CosmosDBService : ICosmosDBService
     {
         private readonly IConfiguration _configuration;
         private readonly CosmosClient _cosmosClient;

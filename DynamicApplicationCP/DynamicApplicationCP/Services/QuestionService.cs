@@ -6,11 +6,11 @@ namespace DynamicApplicationCP.Services
     public class QuestionService : IQuestionService
     {
         private readonly IConfiguration _configuration;
-        private readonly CosmosDBService _cosmosDBService;
+        private readonly ICosmosDBService _cosmosDBService;
         private readonly string _cosmosDbName;
         private readonly string _cosmosDbContainerName;
 
-        public QuestionService(IConfiguration configuration, CosmosDBService cosmosDBService)
+        public QuestionService(IConfiguration configuration, ICosmosDBService cosmosDBService)
         {
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
             _cosmosDBService = cosmosDBService ?? throw new ArgumentNullException(nameof(cosmosDBService));

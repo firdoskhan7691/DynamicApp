@@ -1,19 +1,16 @@
 ﻿using DynamicApplicationCP.Interfaces;
 using DynamicApplicationCP.Models;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Threading.Tasks;
 
 namespace DynamicApplicationCP.Services
 {
     public class CandidateService : ICandidateService
     {
         private readonly IConfiguration _configuration;
-        private readonly CosmosDBService _cosmosDBService;
+        private readonly ICosmosDBService _cosmosDBService;
         private readonly string _cosmosDbName;
         private readonly string _cosmosDbContainerName;
 
-        public CandidateService(IConfiguration configuration, CosmosDBService cosmosDBService)
+        public CandidateService(IConfiguration configuration, ICosmosDBService cosmosDBService)
         {
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
             _cosmosDBService = cosmosDBService ?? throw new ArgumentNullException(nameof(cosmosDBService));
