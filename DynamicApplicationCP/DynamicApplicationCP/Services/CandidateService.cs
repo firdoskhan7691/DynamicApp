@@ -1,23 +1,38 @@
 ﻿using DynamicApplicationCP.Interfaces;
 using DynamicApplicationCP.Models;
+using Microsoft.Extensions.Configuration;
+using System;
+using System.Threading.Tasks;
 
 namespace DynamicApplicationCP.Services
 {
     public class CandidateService : ICandidateService
     {
-        private IConfiguration _configuration;
-        private CosmosDBService _cosmosDBService;
-        private string _cosmosDbName;
-        private string _cosmosDbContainerName;
+        private readonly IConfiguration _configuration;
+        private readonly CosmosDBService _cosmosDBService;
+        private readonly string _cosmosDbName;
+        private readonly string _cosmosDbContainerName;
+
         public CandidateService(IConfiguration configuration, CosmosDBService cosmosDBService)
         {
-            _configuration = configuration;
-            _cosmosDBService = cosmosDBService;
-            _cosmosDbName = _configuration["CosmosDB:DatabaseName"];
-            _cosmosDbContainerName = _configuration["CosmosDB:CandidateContainerName"];
+            _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
+            _cosmosDBService = cosmosDBService ?? throw new ArgumentNullException(nameof(cosmosDBService));
+
+            _cosmosDbName = _configuration["CosmosDB:DatabaseName"]
+                ?? throw new ArgumentNullException("CosmosDB:DatabaseName configuration is missing in appsettings.json");
+
+            _cosmosDbContainerName = _configuration["CosmosDB:CandidateContainerName"]
+                ?? throw new ArgumentNullException("CosmosDB:CandidateContainerName configuration is missing in appsettings.json");
         }
+
         public async Task AddCandidateApplication(CandidateModel candidateModel)
         {
+            if (candidateModel == null)
+            {
+                throw new ArgumentNullException(nameof(candidateModel));
+            }
+
+            candidateModel.CandidateId = Guid.NewGuid().ToString();
             await _cosmosDBService.CreateOrUpdateItemAsync(candidateModel, candidateModel.CandidateId, _cosmosDbName, _cosmosDbContainerName);
         }
     }

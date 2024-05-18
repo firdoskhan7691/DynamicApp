@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "7af31385-de48-4730-86b1-9186d3c71f6d",
+		"name": "DyanmicApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3060349"
+	},
+	"item": [
+		{
+			"name": "CreateProgram",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"programId\": \"\",\r\n  \"programName\": \"Uk Training\",\r\n  \"programDesc\": \"Uk Training\",\r\n  \"formFields\": [\r\n    {\r\n      \"fieldName\": \"FirstName\",\r\n      \"isMandatory\": true,\r\n      \"isHidden\": false,\r\n      \"isInternal\": false\r\n    },\r\n    {\r\n      \"fieldName\": \"LaststName\",\r\n      \"isMandatory\": true,\r\n      \"isHidden\": false,\r\n      \"isInternal\": true\r\n    },\r\n    {\r\n      \"fieldName\": \"Email\",\r\n      \"isMandatory\": true,\r\n      \"isHidden\": true,\r\n      \"isInternal\": true\r\n    }\r\n  ],\r\n  \"questions\": [\r\n    {\r\n      \"questionId\": \"\",\r\n      \"programId\": \"\",\r\n      \"questionTypeId\": \"1\",\r\n      \"questionType\": \"Dropdown\",\r\n      \"question\": \"Please selct country\",\r\n      \"choices\": [\r\n        \"Indai\",\r\n        \"Japan\",\r\n        \"US\"\r\n      ]\r\n    },\r\n    {\r\n      \"questionId\": \"\",\r\n      \"programId\": \"\",\r\n      \"questionTypeId\": \"2\",\r\n      \"questionType\": \"MultipleChoice\",\r\n      \"question\": \"Please select at least 2 answers from dropdown\",\r\n      \"choices\": [\r\n        \"Playing\",\r\n        \"Music\",\r\n        \"Travelling\"\r\n      ]\r\n    },\r\n    {\r\n      \"questionId\": \"\",\r\n      \"programId\": \"\",\r\n      \"questionTypeId\": \"3\",\r\n      \"questionType\": \"YesOrNo\",\r\n      \"question\": \"Have you ever been rejcted by UK embassy?\",\r\n      \"choices\": [\r\n        \"Yes\",\r\n        \"No\"\r\n      ]\r\n    },\r\n     {\r\n      \"questionId\": \"\",\r\n      \"programId\": \"\",\r\n      \"questionTypeId\": \"4\",\r\n      \"questionType\": \"Paragraph\",\r\n      \"question\": \"Plesae tell me about your self\",\r\n      \"choices\": []\r\n    },\r\n    {\r\n      \"questionId\": \"\",\r\n      \"programId\": \"\",\r\n      \"questionTypeId\": \"5\",\r\n      \"questionType\": \"Number\",\r\n      \"question\": \"How many years of experiance you have\",\r\n      \"choices\": []\r\n    },\r\n    {\r\n      \"questionId\": \"\",\r\n      \"programId\": \"\",\r\n      \"questionTypeId\": \"6\",\r\n      \"questionType\": \"Date\",\r\n      \"question\": \"Please provide your last working day\",\r\n      \"choices\": []\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44342/api/Program/CreateProgram",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44342",
+					"path": [
+						"api",
+						"Program",
+						"CreateProgram"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProgram",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44342/api/Program/GetProgram/da60e3d0-a803-41f0-a010-6acdc5e2f13c",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44342",
+					"path": [
+						"api",
+						"Program",
+						"GetProgram",
+						"da60e3d0-a803-41f0-a010-6acdc5e2f13c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddQuestion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"questionId\": \"string\",\r\n  \"programId\": \"da60e3d0-a803-41f0-a010-6acdc5e2f13c\",\r\n  \"questionTypeId\": \"6\",\r\n  \"questionType\": \"RadioButton\",\r\n  \"question\": \"Are you ready to relocate\",\r\n  \"choices\": [\r\n    \"Yes\",\r\n    \"No\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44342/api/Question/AddQuestion",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44342",
+					"path": [
+						"api",
+						"Question",
+						"AddQuestion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetQuestions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44342/api/Question/GetQuestions/da60e3d0-a803-41f0-a010-6acdc5e2f13c",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44342",
+					"path": [
+						"api",
+						"Question",
+						"GetQuestions",
+						"da60e3d0-a803-41f0-a010-6acdc5e2f13c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateQuestion",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"questionId\": \"976b36ef-870a-4916-b263-761df594be1a\",\r\n        \"programId\": \"da60e3d0-a803-41f0-a010-6acdc5e2f13c\",\r\n        \"questionTypeId\": \"2\",\r\n        \"questionType\": \"MultipleChoice\",\r\n        \"question\": \"Please select at least 2 answers from dropdown\",\r\n        \"choices\": [\r\n            \"Playing\",\r\n            \"Music\",\r\n            \"Travelling\",\r\n            \"Swimming\"\r\n        ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44342/api/Question/UpdateQuestion",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44342",
+					"path": [
+						"api",
+						"Question",
+						"UpdateQuestion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteQuestion",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44342/api/Question/DeleteQuestion/9eb440aa-f14b-4e6d-8443-3a646d75e1ff",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44342",
+					"path": [
+						"api",
+						"Question",
+						"DeleteQuestion",
+						"9eb440aa-f14b-4e6d-8443-3a646d75e1ff"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddCandidateApplicarion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"candidateId\": \"\",\r\n  \"programId\": \"da60e3d0-a803-41f0-a010-6acdc5e2f13c\",\r\n  \"firstName\": \"Firdos\",\r\n  \"lastName\": \"Khan\",\r\n  \"email\": \"firdos.khan49@gmail.com\",\r\n  \"phone\": \"9097622020\",\r\n  \"nationalty\": \"Indain\",\r\n  \"currentResidence\": \"Hyd\",\r\n  \"idNumber\": \"1234\",\r\n  \"dateOfBirth\": \"07-06-1991\",\r\n  \"gender\": \"Male\",\r\n  \"candidateAnswers\": [\r\n    {\r\n      \"questionId\": \"9eb440aa-f14b-4e6d-8443-3a646d75e1ff\",\r\n      \"questionType\": \"YesOrNo\",\r\n      \"ansewer\": \"Yes\"\r\n    },\r\n    {\r\n      \"questionId\": \"976b36ef-870a-4916-b263-761df594be1a\",\r\n      \"questionType\": \"MultipleChoice\",\r\n      \"ansewer\": \"Playing,Music\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44342/api/Candidate/AddCandidateApplicarion",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44342",
+					"path": [
+						"api",
+						"Candidate",
+						"AddCandidateApplicarion"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
